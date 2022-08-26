@@ -7,6 +7,10 @@
 # ---------------------------------------------------------------------------
 from classes.PessoaFisica import PessoaFisica
 from classes.Endereco import Endereco
+from classes.Produto import Produto
+from classes.Pedido import Pedido
+from classes.Carrinho import Carrinho
+from classes.Pagamentos import Pagamento
 
 import copy
 
@@ -63,7 +67,7 @@ if len(ends > 0):
 
 # Lembre-se de adicionar estes atributos ao endereço
 pedido.endereco_entrega = copy.deepcopy(endereco) 
-pedido.endereco_faturamento = copy.deepcopy(endreco)
+pedido.endereco_faturamento = copy.deepcopy(endereco)
 
 
 pag = Pagamento(pedido)

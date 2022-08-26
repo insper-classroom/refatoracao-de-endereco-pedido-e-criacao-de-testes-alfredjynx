@@ -7,6 +7,10 @@
 # ---------------------------------------------------------------------------
 from classes.PessoaFisica import PessoaFisica
 from classes.Endereco import Endereco
+from classes.Produto import Produto
+from classes.Pedido import Pedido
+from classes.Carrinho import Carrinho
+from classes.Pagamentos import Pagamento
 
 import copy
 

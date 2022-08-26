@@ -17,5 +17,22 @@ import re
 class Pedido:
     EM_ABERTO = 1
     PAGO = 2
+
+    def __init__(self, conta_pessoa, carrinho):
+        self.pessoa = conta_pessoa
+        self.carrinho = carrinho
+        self.__end_entrega = None
+        self.__end_faturamento = None
+        self.status = Pedido.EM_ABERTO
+
+    def endereco_entrega(self, end:Endereco):
+        self.__end_entrega = end
+
+
+    def endereco_faturamento(self, end:Endereco):
+        self.__end_faturamento = end
+
+
+
     pass
     

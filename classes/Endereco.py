@@ -17,6 +17,8 @@ class Endereco:
     para o contrutor que consulta o cep para encontrar o endereço.
     '''
 
+    lista_end = []
+
     def __init__(self, cep, numero ,rua='', estado='', cidade='', complemento=''):
 
         if (rua == '') or (estado == '') or (cidade == ''):
@@ -37,6 +39,8 @@ class Endereco:
             self.numero = int(numero)
             self.complemento = complemento
             self.cep = str(cep)
+        
+        Endereco.lista_end.append(self)
 
 
     def consultar_cep(self, cep):
@@ -61,6 +65,17 @@ class Endereco:
         json_resp = response.json()
         return json_resp
 
+    def __str__(self):
+        return f"{self.cidade}, {self.estado}, {self.rua}, {self.numero}, {self.cep}"
 
+
+    def listar_enderecos(self):
+        l = []
+        for endereco in Endereco.lista_end():
+            print(f'{endereco.cidade} : {endereco.rua}, {endereco.numero}')
+            print()
+            l.append(f'{endereco.cidade} : {endereco.rua}, {endereco.numero}')
+        
+        return l
 
 
