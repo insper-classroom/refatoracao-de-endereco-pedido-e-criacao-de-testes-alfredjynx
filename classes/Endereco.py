@@ -22,7 +22,7 @@ class Endereco:
     def __init__(self, cep, numero ,rua='', estado='', cidade='', complemento=''):
 
         if (rua == '') or (estado == '') or (cidade == ''):
-            end_json = self.consultar_cep(cep)
+            end_json = Endereco.consultar_cep(cep)
 
             self.rua = end_json['logradouro']
             self.estado = end_json['uf']
@@ -43,7 +43,8 @@ class Endereco:
         Endereco.lista_end.append(self)
 
 
-    def consultar_cep(self, cep):
+    @classmethod
+    def consultar_cep(cls, cep:int or str):
         '''
         Metodo realiza a consulta do cep em uma api publica para obter informações
         como estado, cidade e rua
