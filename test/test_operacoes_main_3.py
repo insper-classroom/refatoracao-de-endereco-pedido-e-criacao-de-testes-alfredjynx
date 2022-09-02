@@ -65,9 +65,9 @@ def test_pessoa_fisica_listar_endereco_vazio():
 @pytest.mark.main3
 @pytest.mark.pessoafisica
 def test_pessoa_fisica_busca_nome_valido_main3():
-    pessoa1 = PessoaFisica(78945623498,'netnet@netnet.com.br','Johnson')
+    pessoa1 = PessoaFisica(789450000000,'netenete@netnet.com.br','João')
 
-    pessoas = PessoaFisica.busca_nome('Johnson')
+    pessoas = PessoaFisica.busca_nome('João')
 
     assert len(pessoas)>0 and pessoas[0].nome == pessoa1.nome
 
@@ -75,7 +75,7 @@ def test_pessoa_fisica_busca_nome_valido_main3():
 @pytest.mark.main3
 @pytest.mark.pessoafisica
 def test_pessoa_fisica_busca_nome_invalido_main3():
-    pessoa1 = PessoaFisica(78945623498,'netnet@netnet.com.br','Johnson')
+    pessoa1 = PessoaFisica(789498,'netneti@netnet.com.br','Jo')
 
     pessoas = PessoaFisica.busca_nome('John')
 
