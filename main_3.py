@@ -60,7 +60,7 @@ carrinho.adicionar_item(sabonete)
 
 pedido = Pedido()
 
-ends = pessoa.listar_enderecos()
+ends = pessoa1.listar_enderecos()
 
 if len(ends > 0):
     endereco = ends[0]
