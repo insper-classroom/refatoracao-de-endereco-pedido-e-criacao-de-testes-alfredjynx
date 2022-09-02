@@ -47,3 +47,18 @@ def test_pedido_endereco_faturamento():
     pedido.endereco_faturamento(end)
 
     assert pedido.get_endereco_faturamento() == end
+
+
+@pytest.mark.pedido
+def test_pedido_endereco_entrega_vazio():
+    with pytest.raises(TypeError): 
+        pedido = Pedido(pessoa,car)
+        pedido.endereco_entrega()
+
+
+@pytest.mark.pedido
+def test_pedido_endereco_faturamento_vazio():
+    with pytest.raises(TypeError): 
+        pedido = Pedido(pessoa,car)
+        pedido.endereco_faturamento()
+
