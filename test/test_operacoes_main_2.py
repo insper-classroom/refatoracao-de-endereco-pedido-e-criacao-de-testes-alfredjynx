@@ -86,10 +86,10 @@ def test_pedido_adicionar_endereco_faturamento_e_entrega_main2():
     end2 = Endereco(1223010,840)
 
     pedido = Pedido(pessoa1,car)
-    pedido.endereco_entrega = copy.deepcopy(end1) 
-    pedido.endereco_faturamento = copy.deepcopy(end2)
+    pedido.endereco_entrega(end1) 
+    pedido.endereco_faturamento(end2) 
 
-    assert pedido.get_endereco_entrega() == 'casa : São Paulo, SP, Rua Caropá, 43, 05447000' and pedido.get_endereco_faturamento() == end2
+    assert pedido.get_endereco_entrega() == end1 and pedido.get_endereco_faturamento() == end2
 
 
 @pytest.mark.main2
